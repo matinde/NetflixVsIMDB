@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-import plotly.express as px
+
 
 netflix_df = pd.read_csv('NetflixOriginals.csv', encoding= 'latin-1')
 
