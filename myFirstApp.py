@@ -4,12 +4,12 @@ import pandas as pd
 
 netflix_df = pd.read_csv('NetflixOriginals.csv', encoding= 'latin-1')
 
-st.page_config(page_title='Netflix Originals vs IMDB', 
+st.set_page_config(page_title='Netflix Originals vs IMDB', 
                 page_icon=':tv:', 
                 layout='wide', 
                 initial_sidebar_state='auto'
                 )
-                
+
 st.title('Netflix Original Movies')
 st.subheader('A close look at Netflix Original Movies as compared to IMDB ratings')
 
