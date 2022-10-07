@@ -1,7 +1,3 @@
-from ctypes import sizeof
-from email.policy import default
-from operator import index
-from turtle import colormode
 import streamlit as st
 import pandas as pd
 from plotly import express as px
