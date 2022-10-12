@@ -30,12 +30,14 @@ st.sidebar.markdown('''
     ''')
 
 st.sidebar.title('Top 5 Genres')
-st.sidebar.write(netflix_df['Genre'].value_counts().index[:5])
+# Top 5 Genres with the highest mean IMDB score
+top_5_genres = netflix_df.groupby('Genre')['IMDB Score'].mean().sort_values(ascending=False).head(5)
+st.sidebar.write(top_5_genres)
 #remove header and index
 
 st.sidebar.title('Top 5 movies')
-st.sidebar.write(netflix_df['Title'].value_counts().index[:5])
-
+# Top 5 movies with highest ratings
+st.sidebar.write(netflix_df[['Title', 'IMDB Score']].sort_values(by='IMDB Score', ascending=False).head(5))
 
 # create a multi-select box
 genre = st.multiselect('Select Genre', netflix_df['Genre'].unique(), default=['Drama', 'Documentary'])
